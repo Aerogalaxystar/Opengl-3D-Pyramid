@@ -1,0 +1,49 @@
+# Project: Opengl8
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = ogl8.o EBO.o shaderclass.o stb.o VAO.o VBO.o Texture.o ../glad.o
+LINKOBJ  = ogl8.o EBO.o shaderclass.o stb.o VAO.o VBO.o Texture.o ../glad.o
+LIBS     = -L"C:/Docs/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Docs/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc -lopengl32 -lglfw3 -lGdi32
+INCS     = -I"C:/Docs/Dev-Cpp/TDM-GCC-64/include" -I"C:/Docs/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Docs/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"C:/Docs/Dev-Cpp/TDM-GCC-64/include" -I"C:/Docs/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Docs/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Docs/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = Opengl8.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+DEL      = C:\Docs\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+ogl8.o: ogl8.cpp
+	$(CPP) -c ogl8.cpp -o ogl8.o $(CXXFLAGS)
+
+EBO.o: EBO.cpp
+	$(CPP) -c EBO.cpp -o EBO.o $(CXXFLAGS)
+
+shaderclass.o: shaderclass.cpp
+	$(CPP) -c shaderclass.cpp -o shaderclass.o $(CXXFLAGS)
+
+stb.o: stb.cpp
+	$(CPP) -c stb.cpp -o stb.o $(CXXFLAGS)
+
+VAO.o: VAO.cpp
+	$(CPP) -c VAO.cpp -o VAO.o $(CXXFLAGS)
+
+VBO.o: VBO.cpp
+	$(CPP) -c VBO.cpp -o VBO.o $(CXXFLAGS)
+
+Texture.o: Texture.cpp
+	$(CPP) -c Texture.cpp -o Texture.o $(CXXFLAGS)
+
+../glad.o: ../glad.cpp
+	$(CPP) -c ../glad.cpp -o ../glad.o $(CXXFLAGS)
