@@ -103,7 +103,7 @@ int main()
 		double crntTime=glfwGetTime();
 		if(crntTime-prevTime>=1/60)
 		{
-			rotation +=0.1f;
+			rotation +=0.3f;
 			prevTime=crntTime;
 		}
 		
