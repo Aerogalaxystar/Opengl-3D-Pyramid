@@ -18,3 +18,8 @@ Wall Texture
 https://github.com/Aerogalaxystar/Opengl-3d-Pyramid/assets/132094721/9332232e-3906-4007-b870-815a0fabdced
 
 
+## Dependencies
+* GLFW
+* GLM
+* STB
+
